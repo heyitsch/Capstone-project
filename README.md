@@ -39,7 +39,7 @@ python3 client.py
 - **/postman API** : This folder contains postman API collection for testing purposes.
 - **Makefile** : Makefile to compile the chameleonhash.c program.
 - **chameleonhash** : Compiled chameleonhash C program.
-- **chameleonhash.c** : Chameleonhash keychain functions to be execute from with server and client program.
+- **chameleonhash.c** : Chameleonhash keychain functions to be execute from server and client program.
 - **package-lock.json** : Automatically generated from npm.
 - **package.json** : This contains the dependancies information to be install when we run `npm install`.
 - **test.sh** - A script file to test run multiple clients at once.
