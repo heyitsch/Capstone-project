@@ -105,7 +105,6 @@ def insertFirstKey():
 def validateCH(v_i, k1, rPrime):
 
     # reterive K_previous from db to verfiy K0 = CH (K1 || V1, r')
-    # getK_pervious = db.get(doc_id=len(db)-1)
     getK_pervious = db.get(doc_id=len(db))
     k_previous = getK_pervious["key"]
     print("k_previous: " + k_previous)
@@ -124,8 +123,6 @@ def validateCH(v_i, k1, rPrime):
     checkString(k_previous, result_toVerify)
 
 def checkString(k_previous, result_toVerify):
-    # print(type(k_previous))
-    # print(type(result_toVerify))
     if k_previous == result_toVerify:
         print("Chameleon hash verification is successful!\n")
     elif k_previous != result_toVerify:
@@ -138,8 +135,10 @@ def checkString(k_previous, result_toVerify):
 # decode base64 data and write to file
 def decodeBase64(encodedBase64_string):
     decoded = base64.b64decode(encodedBase64_string)
-    with open('newModel.h', 'w', encoding="utf-8") as output_file:
-        output_file.write(decoded.decode("utf-8"))
+    # with open('newModel.h', 'w', encoding="utf-8") as output_file:
+    #     output_file.write(decoded.decode("utf-8"))
+    with open('newModel.hdf5', 'wb') as file_to_save:
+        file_to_save.write(decoded)
         print("Updating new model")
         print("base64 data decoded and new model updated! \n")
 
